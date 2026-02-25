@@ -45,7 +45,7 @@
     </symbolPack>
   </GeneDef>
 
-	<GeneDef>
+<!--	<GeneDef>
 		<defName>ISA_Nocturnal</defName>
 		<label>nocturnal</label>
 		<description>Carriers of this gene prefer to work at night. They are happier if awake at nights and unhappy if awake during the day.</description>
@@ -85,6 +85,6 @@
         <li><symbol>ing</symbol></li>
       </suffixSymbols>
     </symbolPack>
-  </GeneDef>
+  </GeneDef>	-->
   
 </Defs>
