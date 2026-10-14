@@ -10,6 +10,9 @@ New xenotypes.
   
 # Old updates
 
+14/10/2026
+- Added 1.7 support
+
 xx/xx/2026
 - New xenotype "Myotragus"
 - New Genes:
