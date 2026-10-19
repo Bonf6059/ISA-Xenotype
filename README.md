@@ -4,7 +4,6 @@ New xenotypes.
 
 # Ideas for possible next updates
 
-- Add vampiric healing powers and/or power similar to coagulate but that increases immunity gain speed
 - Bat or lizard xenotype
 - Add textures to "Intimidating" and "Nocturnal" genes and activate them
   
@@ -12,6 +11,7 @@ New xenotypes.
 
 14/10/2026
 - Added 1.7 support
+- Added Coagulate ability to Myotragus Xenotype
 
 xx/xx/2026
 - New xenotype "Myotragus"
