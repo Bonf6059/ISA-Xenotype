@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+<!-- Myotragus -->
+	
   <GeneDef ParentName="GenePsychicAbilityBase">
     <defName>ISA_PsychicAbility_Latent</defName>
     <label>latent psychic</label> 
@@ -45,46 +47,660 @@
     </symbolPack>
   </GeneDef>
 
-<!--	<GeneDef>
-		<defName>ISA_Nocturnal</defName>
-		<label>nocturnal</label>
-		<description>Carriers of this gene prefer to work at night. They are happier if awake at nights and unhappy if awake during the day.</description>
-		<iconPath>UI/Icons/Genes/Gene_Nocturnal</iconPath>
-		<displayOrderInCategory>101</displayOrderInCategory>
-		<forcedTraits>
-			<li>
-				<def>NightOwl</def>
-			</li>
-		</forcedTraits>
-		<displayCategory>Sleep</displayCategory>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>0</biostatMet>
-	</GeneDef>
+<!-- Petrikin -->
+	
+  <GeneDef>
+    <defName>ISA_FlayedEars</defName>
+    <label>flayed ears</label>
+    <description>Carriers of this gene have mutated, flayed-looking ears.</description>
+    <iconPath>UI/Icons/Genes/Gene_FlayedEars</iconPath>
+    <endogeneCategory>Ears</endogeneCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <biostatCpx>1</biostatCpx>
+    <biostatArc>0</biostatArc>
+    <biostatMet>0</biostatMet>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Attachments/FlayedEars/FlayedEars</texPath>
+        <colorType>Hair</colorType>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <parentTagDef>Head</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+          <dataSouth>
+            <layer>-1</layer>
+          </dataSouth>
+          <dataNorth>
+            <layer>-1</layer>
+          </dataNorth>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
 
   <GeneDef>
-    <defName>ISA_Intimidating</defName>
-    <label>intimidating</label>
-    <iconPath>UI/Genes/Gene_Intimidating</iconPath>
-    <description>Carriers of this gene assume a threatening pose. This causes slaves to be more prone to listening to them and are more likely to arrest someone.</description>
+    <defName>ISA_SpikedTail</defName>
+    <label>spiked tail</label>
+    <description>Carriers of this gene have a reptilian tail tipped with sharp spikes, which they can use in melee combat.</description>
+    <iconPath>UI/Icons/Genes/Gene_SpikedTail</iconPath>
+    <displayCategory>Cosmetic</displayCategory>
+    <!--<geneClass>Pesky.Petrikin.Gene_SpikedTail</geneClass>-->
+    <biostatCpx>1</biostatCpx>
+    <biostatArc>0</biostatArc>
+    <biostatMet>-1</biostatMet>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Things/Pawn/Attachments/SpikedTail/SpikedTail</texPath>
+        <colorType>Hair</colorType>
+        <shaderTypeDef>CutoutComplex</shaderTypeDef>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <layer>-5</layer>
+          </dataSouth>
+          <dataEast>
+            <layer>-5</layer>
+          </dataEast>
+          <dataWest>
+            <layer>-5</layer>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>ISA_FlashgazeGene</defName>
+    <label>petrifying glare</label>
+    <description>Carriers of this gene project archotech frequencies from their retinas, which forces organic cells to rapidly mineralize. This grants the flashgaze ability, a burst that temporarily calcifies enemies to slow them down.</description>
+    <iconPath>UI/Icons/Genes/Gene_Flashgaze</iconPath>
+    <displayCategory>Archite</displayCategory>
+    <biostatCpx>2</biostatCpx>
+    <biostatArc>1</biostatArc>
+    <biostatMet>2</biostatMet>
+    <abilities>
+      <li>Flashgaze</li>
+    </abilities>
+  </GeneDef>
+	
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>ISA_HairStoneBlue</defName>
+    <label>stone blue hair</label>
+    <hairColorOverride>(60, 80, 130)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>200</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>ISA_HairSlateGray</defName>
+    <label>slate gray hair</label>
+    <hairColorOverride>(90, 95, 105)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>201</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>ISA_HairObsidianBlack</defName>
+    <label>obsidian black hair</label>
+    <hairColorOverride>(20, 22, 28)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>202</displayOrderInCategory>
+    <randomBrightnessFactor>0</randomBrightnessFactor>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>ISA_HairAshGray</defName>
+    <label>ash gray hair</label>
+    <hairColorOverride>(140, 145, 150)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>203</displayOrderInCategory>
+  </GeneDef>
+
+<!-- Askbarn -->
+	
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Race_Gene_PEA</defName>
+    <label>pointy ear appendages</label>
+    <description>Carriers of this gene have pointy ear appendages.</description>
+    <iconPath>UI/Icons/Genes/Race_Gene_PEA</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Ears/Race_PEA</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+
+  <GeneDef ParentName="GeneEarsBase">
+    <defName>Race_Gene_BEA</defName>
+    <label>blade ear appendages</label>
+    <description>Carriers of this gene have blade ear appendages.</description>
+    <iconPath>UI/Icons/Genes/Race_Gene_BEA</iconPath>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+        <workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Ears/Race_BEA</texPath>
+        <colorType>Skin</colorType>
+        <parentTagDef>Head</parentTagDef>
+        <useSkinShader>true</useSkinShader>
+        <useRottenColor>true</useRottenColor>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <defaultData>
+            <layer>70</layer>
+          </defaultData>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>Race_Gene_GlowingWhiteEyes</defName>
+    <label>glowing white eyes</label>
+    <labelShortAdj>white-eyed</labelShortAdj>
+    <description>Carriers of this gene have bizarre white eyes.</description>
+    <iconPath>UI/Icons/Genes/Race_Gene_GlowingWhiteEyes</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Eyes/Male/GlowingWhiteEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/Eyes/Female/GlowingWhiteEyes_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Eyes/Male/GlowingWhiteEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/Eyes/Female/GlowingWhiteEyes_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+  
+  <GeneDef ParentName="GeneEyeColor">
+    <defName>Race_Gene_AmberEyes</defName>
+    <label>amber eyes</label>
+    <labelShortAdj>amber-eyed</labelShortAdj>
+    <description>Carriers of this gene have amber eyes.</description>
+    <iconPath>UI/Icons/Genes/Race_Gene_AmberEyes</iconPath>
+    <displayOrderInCategory>1</displayOrderInCategory>
+    <renderNodeProperties>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Eyes/Male/AmberEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/Eyes/Female/AmberEyes_Female</texPathFemale>
+        <anchorTag>RightEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Right</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+          </defaultData>
+        </drawData>
+      </li>
+      <li Class="PawnRenderNodeProperties_Eye">
+        <texPath>Things/Pawn/Humanlike/HeadAttachments/Eyes/Male/AmberEyes_Male</texPath>
+        <texPathFemale>Things/Pawn/Humanlike/HeadAttachments/Eyes/Female/AmberEyes_Female</texPathFemale>
+        <anchorTag>LeftEye</anchorTag>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <parentTagDef>Head</parentTagDef>
+        <drawSize>0.2</drawSize>
+        <side>Left</side>
+        <drawData>
+          <defaultData>
+            <layer>54</layer>
+            <offset>(0, 0, -0.25)</offset>
+            <flip>true</flip>
+          </defaultData>
+          <dataWest>
+            <flip>false</flip>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Gene_Hair_Bright_Teal</defName>
+    <label>bright teal hair</label>
+    <hairColorOverride>(196, 247, 234)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>379</displayOrderInCategory>
+  </GeneDef>
+  
+  <GeneDef ParentName="GeneHairColorBase">
+    <defName>Gene_Hair_Blue_Sky</defName>
+    <label>sky blue hair</label>
+    <hairColorOverride>(135, 206, 235)</hairColorOverride>
+    <selectionWeight>0.05</selectionWeight>
+    <displayOrderInCategory>379</displayOrderInCategory>
+  </GeneDef>
+
+  <GeneDef ParentName="FertilityBase">
+    <defName>LowFertility</defName>
+    <label>low fertility</label>
+    <description>Carriers of this gene have a lower chance of becoming pregnant or impregnating others.</description>
+    <iconPath>UI/Icons/Genes/Gene_Low_Fertility</iconPath>
+    <displayOrderInCategory>111</displayOrderInCategory>
+    <statFactors>
+      <Fertility>0.5</Fertility>
+    </statFactors>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>Pointy_Average_Head</defName>
+    <label>average pointy head</label>
+    <description>Carriers of this gene have average pointy head.</description>
+    <displayOrderInCategory>66</displayOrderInCategory>
+    <displayCategory>Cosmetic</displayCategory>
+    <iconPath>UI/Icons/Genes/Gene_PointyAverage</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <forcedHeadTypes>
+      <li>Female_AveragePointy</li>
+      <li>Male_AveragePointy</li>
+    </forcedHeadTypes>
+    <biostatMet>0</biostatMet>
+    <biostatCpx>0</biostatCpx>
+  </GeneDef>
+    
+  <GeneDef ParentName="GeneTailBase">
+    <biostatCpx>0</biostatCpx>
+    <defName>BladedTail</defName>
+    <label>bladed tail</label>
+    <description>Carriers of this gene grow a bladed tail.</description>
+    <iconPath>UI/Icons/Genes/Gene_BladedTail</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>3792</displayOrderInCategory>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Things/Pawn/Humanlike/BodyAttachments/Tail/BladedTail</texPath>
+        <colorType>Skin</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0.1, 0, -0.25)</offset>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(-0.1, 0, -0.25)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, 0, -0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, 0, -0.15)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneTailBase">
+    <biostatCpx>0</biostatCpx>
+    <defName>SpikedTail</defName>
+    <label>spiked tail</label>
+    <description>Carriers of this gene grow a spiked tail.</description>
+    <iconPath>UI/Icons/Genes/Gene_SpikedTail</iconPath>
+    <iconColor>(0.75, 0.75, 0.75)</iconColor>
+    <displayOrderInCategory>3792</displayOrderInCategory>
+    <renderNodeProperties>
+      <li>
+        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+        <texPath>Things/Pawn/Humanlike/BodyAttachments/Tail/SpikedTail</texPath>
+        <colorType>Skin</colorType>
+        <overrideMeshSize>(1, 1)</overrideMeshSize>
+        <parentTagDef>Body</parentTagDef>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <drawData>
+          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+          <defaultData>
+            <layer>-2</layer>
+          </defaultData>
+          <dataNorth>
+            <offset>(0.1, 0, -0.25)</offset>
+            <layer>90</layer>
+          </dataNorth>
+          <dataSouth>
+            <offset>(-0.1, 0, -0.25)</offset>
+          </dataSouth>
+          <dataEast>
+            <offset>(-0.5, 0, -0.15)</offset>
+          </dataEast>
+          <dataWest>
+            <offset>(0.5, 0, -0.15)</offset>
+          </dataWest>
+        </drawData>
+      </li>
+    </renderNodeProperties>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>RSLongshot</defName>
+    <label>longshot</label>
+    <iconPath>UI/Icons/Genes/gene_longshot</iconPath>
+    <description>Carriers of this gene have outstanding eyesight. Their shooting accuracy at long ranges is enhanced.</description>
     <displayCategory>Miscellaneous</displayCategory>
-    <displayOrderInCategory>50</displayOrderInCategory>
-    <statOffsets MayRequire="Ludeon.RimWorld.Ideology">
-      <SuppressionPower>1.15</SuppressionPower>
-    </statOffsets>
-		<statFactors>
-			<ArrestSuccessChance>1.15</ArrestSuccessChance>
-		</statFactors>
-		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
+    <displayOrderInCategory>57</displayOrderInCategory>
+    <statFactors>
+      <ShootingAccuracyFactor_Long>1.02</ShootingAccuracyFactor_Long>
+      <ShootingAccuracyFactor_Medium>1.01</ShootingAccuracyFactor_Medium>
+    </statFactors>
+    <biostatMet>-2</biostatMet>
+    <exclusionTags>
+      <li>ShootingAccuracy</li>
+    </exclusionTags>
     <symbolPack>
       <prefixSymbols>
-        <li><symbol>intimidat</symbol></li>
-        <li><symbol>terrify</symbol></li>
+        <li><symbol>hawkeye</symbol></li>
+        <li><symbol>clear</symbol></li>
+        <li><symbol>sharp</symbol></li>
       </prefixSymbols>
       <suffixSymbols>
-        <li><symbol>ing</symbol></li>
+        <li><symbol>sniper</symbol></li>
+        <li><symbol>seeker</symbol></li>
       </suffixSymbols>
     </symbolPack>
-  </GeneDef>	-->
-  
+  </GeneDef>
+
+  <GeneDef>
+    <defName>RSLightningReflexes</defName>
+    <label>lightning reflexes</label>
+    <iconPath>UI/Icons/Genes/gene_LightningReflexes</iconPath>
+    <description>Carriers of this gene have superior reflexes.</description>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>58</displayOrderInCategory>
+<statOffsets>
+      <MoveSpeed>0.1</MoveSpeed>
+      <MeleeDodgeChance>10</MeleeDodgeChance>
+</statOffsets>
+    <statFactors>
+       <AimingDelayFactor>0.7</AimingDelayFactor>
+    </statFactors>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>quick</symbol></li>
+        <li><symbol>speed</symbol></li>
+        <li><symbol>gottago</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>dodger</symbol></li>
+        <li><symbol>faster</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+	
+  <GeneDef>
+    <defName>RSBornWarrior</defName>
+    <label>born warrior</label>
+    <iconPath>UI/Icons/Genes/gene_BornWarrior</iconPath>
+    <description>Carriers of this gene have a natural talent for melee combat.</description>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>58</displayOrderInCategory>
+    <exclusionTags>
+      <li>MeleeDamage</li>
+    </exclusionTags>
+<statOffsets>
+      <MeleeHitChance>3</MeleeHitChance>
+      <MeleeDodgeChance>10</MeleeDodgeChance>
+</statOffsets>
+    <statFactors>
+      <MeleeDamageFactor>1.25</MeleeDamageFactor>
+      <MeleeCooldownFactor>0.7</MeleeCooldownFactor>
+    </statFactors>
+    <biostatMet>-3</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>fight</symbol></li>
+        <li><symbol>rumble</symbol></li>
+        <li><symbol>fist</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>breaker</symbol></li>
+        <li><symbol>rumbler</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+	
+  <GeneDef>
+    <defName>EMPSurge</defName>
+    <label>lightning surge</label>
+    <description>Carriers are able to surge a ball of lightning generated by special electric organs. The impact can affect a small area and disable electronics for short time.</description>
+    <iconPath>UI/Icons/Genes/Gene_EM_Surge</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <marketValueFactor>1.5</marketValueFactor>
+    <abilities>
+      <li>LightningSurge</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>LightningSurge</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>stunner</symbol></li>
+        <li><symbol>emper</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>static</symbol></li>
+        <li><symbol>surge</symbol></li>
+        <li><symbol>electric</symbol></li>
+        <li><symbol>spark</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>thunder</symbol></li>
+        <li><symbol>lightning</symbol></li>
+        <li><symbol>storm</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+  <AbilityDef>
+    <defName>LightningSurge</defName>
+    <label>lightning surge</label>
+    <description>Use special body organs to create a directional energy field. Forming a shape of ball lightning, this energy field emits powerful electromagnetic around the impact area.</description>
+    <iconPath>UI/Abilities/Gene_EM_Surge</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <displayOrder>201</displayOrder>
+    <aiCanUse>false</aiCanUse>
+    <sendMessageOnCooldownComplete>true</sendMessageOnCooldownComplete>
+    <warmupStartSound>Explosion_EMP</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>12</range>
+      <muzzleFlashScale>16</muzzleFlashScale>
+      <warmupTime>1</warmupTime>
+      <soundCast>Shot_ChargeRifle</soundCast>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>RaceBallLightning</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>RaceBallLightning</defName>
+    <label>ball lightning</label>
+	<thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/RaceBallLightning</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <explosionRadius>2</explosionRadius>
+      <damageDef>ElectricalBurn</damageDef>
+      <damageAmountBase>150</damageAmountBase>
+      <speed>35</speed>
+    </projectile>
+  </ThingDef>
+
+
+  <GeneDef>
+    <defName>EMPRoar</defName>
+    <label>thundering roar</label>
+    <description>Carriers of this gene can create an EMP blast centered on themselves. Electronics exposed to the blast will briefly stop working.</description>
+    <iconPath>UI/Icons/Genes/Gene_EM_Roar</iconPath>
+    <displayCategory>Ability</displayCategory>
+    <marketValueFactor>1.5</marketValueFactor>
+    <abilities>
+      <li>ThunderingRoar</li>
+    </abilities>
+    <descriptionHyperlinks>
+      <AbilityDef>ThunderingRoar</AbilityDef>
+    </descriptionHyperlinks>
+    <biostatMet>-2</biostatMet>
+    <symbolPack>
+      <wholeNameSymbols>
+        <li><symbol>stomer</symbol></li>
+        <li><symbol>blaster</symbol></li>
+      </wholeNameSymbols>
+      <prefixSymbols>
+        <li><symbol>blast</symbol></li>
+        <li><symbol>roar</symbol></li>
+        <li><symbol>tempest</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>thunder</symbol></li>
+        <li><symbol>lightning</symbol></li>
+        <li><symbol>storm</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+  <AbilityDef>
+    <defName>ThunderingRoar</defName>
+    <label>thundering roar</label>
+    <description>Use special body organs to create an EMP blast centered on themselves. Electronics exposed to the blast will briefly stop working.</description>
+    <iconPath>UI/Abilities/Gene_EM_Roar</iconPath>
+    <cooldownTicksRange>5000</cooldownTicksRange>
+    <displayOrder>202</displayOrder>
+    <aiCanUse>false</aiCanUse>
+    <ai_SearchAOEForTargets>false</ai_SearchAOEForTargets>
+    <targetRequired>false</targetRequired>
+    <warmupStartSound>Interact_Repair_Start</warmupStartSound>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>4</range>
+      <muzzleFlashScale>16</muzzleFlashScale>
+      <warmupTime>1</warmupTime>
+      <requireLineOfSight>false</requireLineOfSight>
+      <soundCast>Pawn_Mech_Termite_Call</soundCast>
+      <drawAimPie>false</drawAimPie>    
+      <targetParams>
+        <canTargetSelf>true</canTargetSelf>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityLaunchProjectile">
+        <projectileDef>RaceEMPRoar</projectileDef>
+      </li>
+    </comps>
+  </AbilityDef>
+  <ThingDef ParentName="BaseBullet">
+    <defName>RaceEMPRoar</defName>
+    <label>EMP Blast</label>
+	<thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+      <texPath>Things/Projectile/RaceBallLightning</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+      <explosionRadius>4</explosionRadius>
+      <damageDef>ElectricalBurn</damageDef>
+      <damageAmountBase>150</damageAmountBase>
+      <speed>300</speed>
+    </projectile>
+  </ThingDef>
+
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_BlueGray</defName>
+    <label>blue gray skin</label>
+    <labelShortAdj>blue gray</labelShortAdj>
+    <description>Carriers of this produce a blue-gray pigment in their skin.</description>
+    <skinColorOverride>(83, 104, 120)</skinColorOverride>
+    <displayOrderInCategory>3791</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>mist</symbol></li>
+        <li><symbol>shade</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef ParentName="GeneSkinColorOverride">
+    <defName>Skin_OceanGray</defName>
+    <label>ocean gray skin</label>
+    <labelShortAdj>blue gray</labelShortAdj>
+    <description>Carriers of this produce a ocean-gray pigment in their skin.</description>
+    <skinColorOverride>(77, 117, 154)</skinColorOverride>
+    <displayOrderInCategory>3792</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dim</symbol></li>
+        <li><symbol>tainted</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
 </Defs>
