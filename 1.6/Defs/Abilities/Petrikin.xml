@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <AbilityDef>
+    <defName>ISA_Flashgaze</defName>
+    <label>flashgaze</label>
+    <description>A quick, burst-like gaze that temporarily calcifies targets in an area. While they do not turn completely to stone, their movement and manipulation are severely hindered for a short duration.</description>
+    <iconPath>UI/Icons/Genes/Gene_Flashgaze</iconPath>
+    <cooldownTicksRange>7500</cooldownTicksRange>
+    <hostile>true</hostile>
+    <aiCanUse>true</aiCanUse>
+    <warmupSound>PsycastCastLoop</warmupSound>
+    <statBases>
+      <Ability_Duration>3000</Ability_Duration>
+      <Ability_EffectRadius>2.9</Ability_EffectRadius>
+    </statBases>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>13.9</range>
+      <warmupTime>2.5</warmupTime>
+      <requireLineOfSight>true</requireLineOfSight>
+      <soundCast>PsychicShockLanceCast</soundCast>
+      <targetParams>
+        <canTargetSelf>False</canTargetSelf>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetLocations>True</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>ISA_FlashgazeHediff</hediffDef>
+        <onlyBrain>False</onlyBrain>
+        <onlyApplyToSelf>False</onlyApplyToSelf>
+        <replaceExisting>true</replaceExisting>
+        <ignoreSelf>true</ignoreSelf>
+        <goodwillImpact>-15</goodwillImpact>
+      </li>
+      <li Class="CompProperties_AbilityFleckOnTarget">
+        <fleckDefs>
+          <li>ExplosionFlash</li>
+          <li>ShockwaveFast</li>
+        </fleckDefs>
+        <scale>2.5</scale>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <HediffDef>
+    <defName>ISA_FlashgazeHediff</defName>
+    <label>flash-calcified</label>
+    <description>A temporary stiffening of the joints and calcification of the skin from a sudden optical flash. Movement and manipulation are heavily slowed down, but will wear off over time.</description>
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 0.6)</defaultLabelColor>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>true</showRemainingTime>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.75</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.4</offset>
+          </li>
+        </capMods>
+        <totalBleedFactor>0.25</totalBleedFactor>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>
