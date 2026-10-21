@@ -38,29 +38,79 @@
 	</genes>
   </XenotypeDef>
 
-<!--  <XenotypeDef>
-    <defName>ISA_RedPanda</defName>
-    <label>redpanda</label>
-    <description>Myotragus descend from a lost civilization of nomadic healers. They used to live in the desest forests and they were so rare to find that it sparked many legends about their abilities. With the passing years and the growing number of factions, they slowly got integrated with the general populations willingly or by force.\n\nSince they migrated far from their beloved forests, they can be commonly found as healers or farmers as a way to stay in contact with their roots.</description>
-    <iconPath>UI/Icons/Xenotypes/Myotragus</iconPath>
-    <inheritable>true</inheritable>
-    <nameMaker>NamerPersonYttakin</nameMaker>
-    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+<XenotypeDef>
+    <defName>ISA_Petrikin</defName>
+    <label>petrikin</label>
+    <description>A xenotype engineered for subterranean environments. Resembling the mythological basilisk, the Petrikin were originally created as exotic guards for bio-vaults. Their most terrifying trait is an archotech-derived optical emission that temporarily calcifies their enemies to slow them down.</description>
+    <descriptionShort>An engineered xenotype capable of calcifying targets to slow them down.</descriptionShort>
+    <iconPath>UI/Icons/Xenotypes/PetrikinIcon</iconPath>
+    <combatPowerFactor>1.4</combatPowerFactor>
+    <inheritable>false</inheritable>
     <genes>
-      <li>Body_Standard</li>
-	  <li>ISA_Intimidating</li>
-	  <li>ISA_Nocturnal</li>
-	  <li>MaxTemp_SmallDecrease</li>
-	  <li>UVSensitivity_Mild</li>
-	  <li>DarkVision</li>
-	  <li>AptitudeStrong_Social</li>
-	  <li>AptitudeStrong_Artistic</li>
-	  <li>AptitudePoor_Plants</li>
-	  <li>MinTemp_SmallDecrease</li>
-	  <li>Beauty_Pretty</li>
-	  <li>ERN_Ears_RedPanda</li>
-	  <li>ERN_Tail_RedPanda</li>
-	</genes>
-  </XenotypeDef>	-->
+      <li>ISA_FlayedEars</li>
+      <li>ISA_SpikedTail</li>
+      <li>ISA_FlashgazeGene</li>
+      <li>MinTemp_SmallIncrease</li>
+      <li>ToxResist_Total</li>
+      <li>DarkVision</li>
+      <li>WoundHealing_SuperFast</li>
+      <li>Aggression_Aggressive</li>
+      <li>Immunity_Strong</li>
+      <li>ISA_HairStoneBlue</li>
+      <li>ISA_HairSlateGray</li>
+      <li>ISA_HairObsidianBlack</li>
+      <li>ISA_HairAshGray</li>
+      <li>AptitudeTerrible_Cooking</li>
+      <li>AptitudeTerrible_Plants</li>
+      <li>AptitudePoor_Animals</li>
+    </genes>
+  </XenotypeDef>
 
+<XenotypeDef>
+    <defName>ISA_Askbarn</defName>
+    <label>isaÅskbarn</label>
+    <description>Originating from Jotun Interstellar’s failed super-soldier project, Åskbarns are a fragile but cunning race capable of emitting electromagnetic surges from specialized organs.
+	
+Though their weak bodies make close combat difficult, their exceptional eyesight makes them superb marksmen. Rather than engage the enemy up close, Åskbarns prefer to strike from a distance and retreat—always with their characteristic optimism.
+
+Many tribes call them “thunder children” for their ability to project electromagnetic pulses—a name that, funnily enough, is the exact meaning of “Åskbarn.”
+Due to their disarmingly open nature, Åskbarns have become the subject of numerous suspicious stereotypes—such as the belief that they’re all natural-born con artists or incurable pranksters.</description>
+    <descriptionShort>Natural-born tricksters, Åskbarns are a fast, quick-witted race capable of emitting electromagnetic pulses through specialized organs.
+Their fragile bodies make them poorly suited for close combat, but they excel at long-range marksmanship.
+They have notoriously poor artistic and animal-handling skills, and their bodies heal at a slower rate than most.</descriptionShort>
+	<inheritable>true</inheritable>
+    <nameMaker>NamerPersonAskbarn_Male</nameMaker>
+    <nameMakerFemale>NamerPersonAskbarn_Female</nameMakerFemale>
+    <chanceToUseNameMaker>1</chanceToUseNameMaker>
+	<iconPath>UI/Icons/Xenotypes/thundergoblin_race</iconPath>
+    <genes>
+			<li>Race_Gene_PEA</li>
+			<li>Race_Gene_GlowingWhiteEyes</li>
+			<li>Gene_Hair_Bright_Teal</li>
+			<li>Hair_SnowWhite</li>
+			<li>Hair_Grayless</li>
+			<li>Beard_NoBeardOnly</li>
+			<li>LowFertility</li>
+			<li>Pointy_Average_Head</li>
+			<li>BladedTail</li>
+			<li>EMPSurge</li>
+			<li>Body_Standard</li>
+			<li>Body_Thin</li>
+			<li>WoundHealing_Slow</li>
+			<li>MeleeDamage_Weak</li>
+			<li>Mood_Optimist</li>
+			<li>Delicate</li>
+			<li>Libido_High</li>
+			<li>AptitudeStrong_Social</li>
+			<li>Skin_SheerWhite</li>
+			<li>Skin_LightGray</li>
+			<li>Skin_SlateGray</li>
+			<li>Learning_Fast</li>
+			<li>RSLightningReflexes</li>
+			<li>FireWeakness</li>
+			<li>AptitudeTerrible_Animals</li>
+			<li>AptitudeTerrible_Artistic</li>
+			<li>RSLongshot</li>
+    </genes>
+  </XenotypeDef>
 </Defs>
