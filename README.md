@@ -4,7 +4,6 @@ New xenotypes.
 
 # Ideas for possible next updates
 
-- REMOVE THE "Intimidating" and "Nocturnal" genes AND XENOTYPE RED PANDA
 - halffoot: ottimi mechanitor, alto crafting, pessimo animali e cura, terribili combattenti
 brawnum: costruttori, ortolani e duri da abbattere, animali da soma ma dormiglioni mangioni pessimi artisti
 keshig: combattenti, allevatori ma cattivi coltivatori e parlatori, dei muri difficili da abbattere
@@ -30,7 +29,7 @@ cooking
 artistic avaloi
 crafting halffoot stoneborn
 
-askbarn revisited: bomba EMP diventa bomba stun e EMP forse cuochi, zampe palmate/anfibi (guarda anche bogleg), 
+askbarn revisited: forse cuochi, anfibi (guarda anche bogleg), 
 petrikin revisited: artisti forse studiosi, guarda saurid per renderli più rettili
 
   
