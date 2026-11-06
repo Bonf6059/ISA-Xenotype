@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<!-- Myotragus -->
+	
+  <GeneDef ParentName="GenePsychicAbilityBase">
+    <defName>ISA_PsychicAbility_Latent</defName>
+    <label>latent psychic</label> 
+    <labelShortAdj>psy-latent</labelShortAdj>
+    <description>Carriers of this gene are more adept to psy-power than average but are not note worthy.</description>
+    <iconPath>UI/Icons/Genes/Gene_LatentPsychicAbility</iconPath>
+    <displayOrderInCategory>19</displayOrderInCategory>
+    <statOffsets>
+      <PsychicSensitivity>0.1</PsychicSensitivity>
+      <MeditationFocusGain>0.05</MeditationFocusGain>
+      <PsychicEntropyRecoveryRate>0.2</PsychicEntropyRecoveryRate>
+    </statOffsets>
+    <biostatMet>-1</biostatMet>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>psy</symbol></li>
+        <li><symbol>senso</symbol></li>
+        <li><symbol>sensi</symbol></li>
+      </prefixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+  <GeneDef>
+    <defName>ISA_SlowDigestion</defName>
+    <label>slow digestion</label>
+    <description>Carriers of this gene have their digestion slightly slowed down. This lets them eat less often and has the side accidental side effect of making them immune to food poisoning even after eating rotten food.</description>
+    <iconPath>UI/Icons/Genes/Gene_Slow_Digestion</iconPath>
+    <foodPoisoningChanceFactor>0</foodPoisoningChanceFactor>
+    <biostatMet>1</biostatMet>
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>9</displayOrderInCategory>
+    <symbolPack>
+      <prefixSymbols>
+        <li><symbol>dura</symbol></li>
+        <li><symbol>eat</symbol></li>
+        <li><symbol>feed</symbol></li>
+        <li><symbol>cram</symbol></li>
+      </prefixSymbols>
+      <suffixSymbols>
+        <li><symbol>vore</symbol></li>
+      </suffixSymbols>
+    </symbolPack>
+  </GeneDef>
+
+</Defs>
